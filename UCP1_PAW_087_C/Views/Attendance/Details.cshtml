@@ -1,0 +1,36 @@
+﻿@model UCP1_PAW_087_C.Models.Attendance
+
+@{
+    ViewData["Title"] = "Detail Kehadiran";
+}
+
+<h1>Detail Kehadiran</h1>
+
+<div>
+    <h4>Kehadiran</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("User")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdUserNavigation.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Masuk")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CheckInDatetime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Keluar")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CheckOutDatetime)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdAttendance">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

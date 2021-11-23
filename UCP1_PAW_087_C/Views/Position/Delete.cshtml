@@ -1,0 +1,27 @@
+﻿@model UCP1_PAW_087_C.Models.Position
+
+@{
+    ViewData["Title"] = "Hapus Jabatan";
+}
+
+<h1>Hapus Jabatan</h1>
+
+<h3>Apakah Anda yakin ingin menghapus jabatan ini?</h3>
+<div>
+    <h4>Jabatan</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama Jabatan")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PositionName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdPosition" />
+        <button type="submit" value="Delete" class="btn btn-danger">Hapus</button> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

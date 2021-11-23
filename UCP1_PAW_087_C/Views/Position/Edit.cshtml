@@ -1,0 +1,34 @@
+﻿@model UCP1_PAW_087_C.Models.Position
+
+@{
+    ViewData["Title"] = "Edit Jabatan";
+}
+
+<h1>Edit Jabatan</h1>
+
+<h4>Jabatan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdPosition" />
+            <div class="form-group">
+                <label asp-for="PositionName" class="control-label">Nama Jabatan</label>
+                <input asp-for="PositionName" class="form-control" />
+                <span asp-validation-for="PositionName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Save" class="btn btn-primary">Simpan</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

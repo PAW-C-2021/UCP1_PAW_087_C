@@ -1,0 +1,39 @@
+﻿@model UCP1_PAW_087_C.Models.Attendance
+
+@{
+    ViewData["Title"] = "Hapus Kehadiran";
+}
+
+<h1>Hapus Kehadiran</h1>
+
+<h3>Apakah Anda yakin ingin menghapus kehadiran ini?</h3>
+<div>
+    <h4>Kehadiran</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayName("User")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdUserNavigation.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Masuk")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CheckInDatetime)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayName("Tanggal Keluar")
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CheckOutDatetime)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdAttendance" />
+        <button type="submit" value="Delete" class="btn btn-danger">Hapus</button> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

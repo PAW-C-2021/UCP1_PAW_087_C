@@ -1,0 +1,51 @@
+﻿@model UCP1_PAW_087_C.Models.Users
+
+@{
+    ViewData["Title"] = "Hapus User";
+}
+
+<h1>Hapus User</h1>
+
+<h3>Apakah Anda yakin akan menghapus user ini?</h3>
+<div>
+    <h4>User</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Email")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Password")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Jabatan")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdPositionNavigation.PositionName)
+        </dd class>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Role")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdRoleNavigation.RoleName)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdUser" />
+        <button type="submit" value="Delete" class="btn btn-danger">Hapus</button> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

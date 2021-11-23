@@ -1,0 +1,41 @@
+﻿@model IEnumerable<UCP1_PAW_087_C.Models.Position>
+
+@{
+    ViewData["Title"] = "Data Jabatan";
+}
+
+<h1>Data Jabatan</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-sm btn-success text-decoration-none">Tambah Jabatan</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("ID Jabatan")
+            </th>
+            <th>
+                @Html.DisplayName("Nama Jabatan")
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdPosition" class="btn btn-sm btn-primary text-decoration-none">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.IdPosition" class="btn btn-sm btn-secondary text-decoration-none">Detail</a>
+                <a asp-action="Delete" asp-route-id="@item.IdPosition" class="btn btn-sm btn-danger text-decoration-none">Hapus</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

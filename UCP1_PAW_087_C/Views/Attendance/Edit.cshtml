@@ -1,0 +1,44 @@
+﻿@model UCP1_PAW_087_C.Models.Attendance
+
+@{
+    ViewData["Title"] = "Edit Kehadiran";
+}
+
+<h1>Edit Kehadiran</h1>
+
+<h4>Kehadiran</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdAttendance" />
+            <div class="form-group">
+                <label asp-for="IdUser" class="control-label">User</label>
+                <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
+                <span asp-validation-for="IdUser" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckInDatetime" class="control-label">Tanggal Masuk</label>
+                <input asp-for="CheckInDatetime" class="form-control" />
+                <span asp-validation-for="CheckInDatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CheckOutDatetime" class="control-label">Tanggal Keluar</label>
+                <input asp-for="CheckOutDatetime" class="form-control" />
+                <span asp-validation-for="CheckOutDatetime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Save" class="btn btn-primary">Simpan</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

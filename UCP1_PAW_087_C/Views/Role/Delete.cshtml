@@ -1,0 +1,27 @@
+﻿@model UCP1_PAW_087_C.Models.Role
+
+@{
+    ViewData["Title"] = "Hapus Role";
+}
+
+<h1>Hapus Role</h1>
+
+<h3>Apakah Anda yakin ingin menghapus role ini?</h3>
+<div>
+    <h4>Role</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Nama Role")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RoleName)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdRole" />
+        <button type="submit" value="Delete" class="btn btn-danger">Hapus</button> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
